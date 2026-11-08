@@ -1,0 +1,23 @@
+{
+  "name": "schoology-mcp",
+  "version": "1.0.0",
+  "description": "MCP server that lets AI assistants (Claude, etc.) read your Schoology: upcoming and overdue assignments, events, courses and materials. Read-only, uses your own sign-in, no API key needed.",
+  "type": "module",
+  "bin": { "schoology-mcp": "src/index.js" },
+  "files": ["src", "README.md", "LICENSE"],
+  "scripts": {
+    "start": "node src/index.js",
+    "login": "node src/index.js login",
+    "check": "node src/index.js check",
+    "postinstall": "playwright install chromium --only-shell || true"
+  },
+  "keywords": ["mcp", "model-context-protocol", "schoology", "lms", "homework", "assignments", "claude"],
+  "author": "Charik Malik",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "playwright": "^1.55.0",
+    "zod": "^3.25.0"
+  }
+}
